@@ -35,6 +35,9 @@ jobs:
       - name: Install Netlify
         run: pnpm install netlify-cli@21.5.0 -g
 
+      - name: Run tests
+        run: pnpm run test
+
       - name: Build site
         run: pnpm run build
 
