@@ -4,6 +4,20 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        loadPaths: [path.resolve(__dirname, "./src/scss")],
+        silenceDeprecations: ["import", "slash-div", "global-builtin"],
+        quietDeps: true,
+        additionalData: `
+          @import "global.scss";
+         
+          
+        `,
+      },
+    },
+  },
   resolve: {
     alias: {
       "@/*": path.resolve(__dirname, "./src"),
